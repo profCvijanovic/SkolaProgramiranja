@@ -7,6 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import model.Smer;
+import model.User;
+import model.UserType;
+
 /**
  * Servlet implementation class LoginController
  */
@@ -26,11 +34,15 @@ public class LoginController extends HttpServlet {
 		
 		System.out.println("Dobrodosli u doGet");
 		
+
+		
+		
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Dobrodosli u doPost");
+		
 	}
 
 }
