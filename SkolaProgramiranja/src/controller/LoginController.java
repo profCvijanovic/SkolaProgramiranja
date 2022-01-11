@@ -7,13 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-
-import model.Smer;
 import model.User;
+import model.UserDetails;
 import model.UserType;
+import service.LoginService;
 
 /**
  * Servlet implementation class LoginController
@@ -30,18 +27,20 @@ public class LoginController extends HttpServlet {
     }
 
 	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Dobrodosli u doGet");
-		
-
-		
-		
-	}
-
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Dobrodosli u doPost");
+		// povezivanje na service
+		LoginService service = new LoginService();
+		// prihvatamo parametre iz request object-a
+		String userName = request.getParameter("userName");
+		String password = request.getParameter("password");
+		
+		System.out.println("UN: " + userName);
+		System.out.println("Password: " + password);
+		
+		
+		
+		
 		
 	}
 

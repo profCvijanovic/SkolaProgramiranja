@@ -25,7 +25,7 @@
 		<property name="show_sql">true</property>
 		
 		<!-- Drop and re-create the database schema on startup -->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">none</property>
 		
 		<!-- Names the annotated entity class -->
 		<mapping class="model.Smer"/>
@@ -35,6 +35,7 @@
 		<mapping class="model.Predmet"/>
 		<mapping class="model.Profesor"/>
 		<mapping class="model.User"/>
+		<mapping class ="model.PolozeniIspiti"/>
 
 	</session-factory>
 </hibernate-configuration>
