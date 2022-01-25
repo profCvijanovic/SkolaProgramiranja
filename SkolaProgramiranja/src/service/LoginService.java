@@ -18,4 +18,8 @@ public class LoginService {
 		return validacija.proveriUserIPassPrazni(userName, password);
 	}
 
+	public User vratiAkoPostojiUser(String userName, String password) {
+		return dao.vratiAkoPostojiUser(userName, password);
+	}
+
 }
