@@ -7,35 +7,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>admin</title>
+<link
+	type="text/css"
+	rel = "stylesheet"
+	href="../css/style.css"
+	/>
 </head>
 <body>
-	<% User user = (User)session.getAttribute("user"); %>
+	<jsp:useBean id= "user" scope="session" class="model.User"></jsp:useBean>
 	<h1>Dobrodosli na administratorsku stranicu</h1>
-	<p>Ulogovan je: <%=user.getUserName()%></p>
+	<p style="display: inline;">Ulogovan je: ${user.userName}</p>
+	<a href="logout.jsp" style="margin-left: 80px;">
+		<img src = "../slike/logout.jfif"/>
+	</a><br>
+	<img src = "../slike/adminPage.jfif"/> <br>
+	<a href="addStudent.jsp"><button>ADD STUDENT</button></a>
 	
-	<%
-	int brojRedova = 1;
-	if(user.getUserName().equals("admin")){
-		brojRedova = 5;
-	}else{
-		brojRedova = 10;
-	}
-	%>
-	
-	<table border = 1>
-		<tr>
-			<th>id</th>
-			<th>ime</th>
-		</tr>	
-		<% 
-			for(int i = 1; i <= brojRedova; i++){
-		%>
-		<tr>
-			<td><%=i %></td>
-			<td>ime<%=i %></td>
-		</tr>
-		<% } %>
-	</table>
+
 
 
 </body>
