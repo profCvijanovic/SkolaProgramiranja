@@ -22,6 +22,7 @@
 	</a><br>
 	<img src = "../slike/adminPage.jfif"/> <br>
 	<a href="addStudent.jsp"><button>ADD STUDENT</button></a>
+	<a href="addProfesor.jsp"><button>ADD PROFESOR</button></a>
 	
 
 

@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Student;
+import model.Profesor;
 import model.User;
 import model.UserType;
 import service.AddStudentService;
 
 /**
- * Servlet implementation class AddStudentController
+ * Servlet implementation class AddProfesorController
  */
-@WebServlet(description = "dodavanje studenta", urlPatterns = { "/AddStudentController" })
-public class AddStudentController extends HttpServlet {
+@WebServlet(description = "dodavanje profesora", urlPatterns = { "/AddProfesorController" })
+public class AddProfesorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,17 +32,17 @@ public class AddStudentController extends HttpServlet {
 		String country = request.getParameter("country");
 		String city = request.getParameter("city");
 		String street = request.getParameter("street");
-		String indexNo = request.getParameter("indexNo");
+		String identificationNo = request.getParameter("identificationNo");
 		
-		User user = service.popuniUsera(userName,password, UserType.STUDENT);
-		Student student = service.popuniStudent(firstName, lastName, email, mobilePhone, country, city, street, user, indexNo);
+		User user = service.popuniUsera(userName,password, UserType.PROFESOR);
+		Profesor profesor = service.popuniProfesor(firstName, lastName, email, mobilePhone, country, city, street, user, identificationNo);
 		
-		boolean snimiStudenta = service.ubaciStudenta(user,student);
+		boolean snimiProfesora= service.ubaciProfesora(user,profesor);
 		
-		if(snimiStudenta) {
+		if(snimiProfesora) {
 			response.sendRedirect("view/admin.jsp");
 		}else {
-			response.sendRedirect("view/addStudent.jsp");
+			response.sendRedirect("view/addProfesor.jsp");
 		}
 		
 	}
