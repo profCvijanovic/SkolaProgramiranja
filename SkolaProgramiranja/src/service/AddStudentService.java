@@ -2,6 +2,7 @@ package service;
 
 import common.CommonMethods;
 import dao.AddStudentDao;
+import model.Administrator;
 import model.Profesor;
 import model.Student;
 import model.User;
@@ -32,6 +33,15 @@ public class AddStudentService {
 
 	public boolean ubaciProfesora(User user, Profesor profesor) {
 		return dao.ubaciProfesora(user, profesor);
+	}
+
+	public Administrator popuniAdministrator(String firstName, String lastName, String email, String mobilePhone,
+			String country, String city, String street, User user, String identificationNumber) {
+		return common.popuniAdministrator(firstName, lastName, email, mobilePhone, country, city, street, user, identificationNumber);
+	}
+
+	public boolean ubaciAdministrator(User user, Administrator administrator) {
+		return dao.ubaciAdministrator(user, administrator);
 	}
 
 }

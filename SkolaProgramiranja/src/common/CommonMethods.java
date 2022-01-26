@@ -1,6 +1,7 @@
 package common;
 
 import model.Address;
+import model.Administrator;
 import model.Contact;
 import model.Profesor;
 import model.Student;
@@ -64,6 +65,30 @@ public class CommonMethods {
 		profesor.setContact(contact);
 		
 		return profesor;
+	}
+
+	public Administrator popuniAdministrator(String firstName, String lastName, String email, String mobilePhone,
+			String country, String city, String street, User user, String identificationNumber) {
+		
+		Administrator administrator = new Administrator();
+		Address adresa = new Address();
+		Contact contact = new Contact();
+		
+		adresa.setCountry(country);
+		adresa.setCity(city);
+		adresa.setStreet(street);
+		
+		contact.setEmail(email);
+		contact.setMobilePhone(mobilePhone);
+		
+		administrator.setFirstName(firstName);
+		administrator.setLastName(lastName);
+		administrator.setUser(user);
+		administrator.setIdentificationNumber(identificationNumber);
+		administrator.setAddress(adresa);
+		administrator.setContact(contact);
+		
+		return administrator;
 	}
 
 }

@@ -7,16 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Administrator;
+import model.Profesor;
 import model.User;
 import model.UserType;
 import service.AddStudentService;
 
 /**
- * Servlet implementation class AddAdministratorController
+ * Servlet implementation class AddProfesorController
  */
-@WebServlet(description = "dodavanje administratora", urlPatterns = { "/AddAdministratorController" })
-public class AddProfesorController extends HttpServlet {
+@WebServlet(description = "dodavanje profesora", urlPatterns = { "/AddProfesorController" })
+public class AddAdministratorController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,17 +32,17 @@ public class AddProfesorController extends HttpServlet {
 		String country = request.getParameter("country");
 		String city = request.getParameter("city");
 		String street = request.getParameter("street");
-		String identificationNumber = request.getParameter("identificationNumber");
+		String identificationNo = request.getParameter("identificationNo");
 		
-		User user = service.popuniUsera(userName,password, UserType.ADMINISTRACIJA);
-		Administrator administrator = service.popuniAdministrator(firstName, lastName, email, mobilePhone, country, city, street, user, identificationNumber);
+		User user = service.popuniUsera(userName,password, UserType.PROFESOR);
+		Profesor profesor = service.popuniProfesor(firstName, lastName, email, mobilePhone, country, city, street, user, identificationNo);
 		
-		boolean snimiAdministratora= service.ubaciAdministrator(user,administrator);
+		boolean snimiProfesora= service.ubaciProfesora(user,profesor);
 		
-		if(snimiAdministratora) {
+		if(snimiProfesora) {
 			response.sendRedirect("view/admin.jsp");
 		}else {
-			response.sendRedirect("view/addAdministracija.jsp");
+			response.sendRedirect("view/addProfesor.jsp");
 		}
 		
 	}
