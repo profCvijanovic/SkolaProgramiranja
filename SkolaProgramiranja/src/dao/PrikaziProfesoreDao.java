@@ -58,7 +58,6 @@ public class PrikaziProfesoreDao {
 				listaProfesora.add(profesor);
 			}
 			
-	
 			session.getTransaction().commit();
 			System.out.println("Uspesno vracena lista profesora");
 			return listaProfesora;

@@ -5,6 +5,7 @@ import model.Administrator;
 import model.Contact;
 import model.Predmet;
 import model.Profesor;
+import model.Smer;
 import model.Student;
 import model.User;
 import model.UserType;
@@ -99,6 +100,15 @@ public class CommonMethods {
 		predmet.setSifraPredmeta(sifraPredmeta);
 		
 		return predmet;
+	}
+
+	public Smer popuniSmer(String nazivSmera, String sifraSmera) {
+		
+		Smer smer = new Smer();
+		smer.setNazivSmera(nazivSmera);
+		smer.setSifraSmera(sifraSmera);
+		
+		return smer;
 	}
 
 }
