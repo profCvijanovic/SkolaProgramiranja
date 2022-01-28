@@ -11,7 +11,7 @@ import model.User;
 
 public class AddStudentDao {
 	
-	SessionFactory sf = new Configuration().configure().buildSessionFactory();
+	SessionFactory sf = HibernateUtil.getSessionFactory();
 
 	public boolean ubaciStudenta(User user, Student student) {
 		

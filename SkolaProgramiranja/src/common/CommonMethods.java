@@ -3,6 +3,7 @@ package common;
 import model.Address;
 import model.Administrator;
 import model.Contact;
+import model.Predmet;
 import model.Profesor;
 import model.Student;
 import model.User;
@@ -89,6 +90,15 @@ public class CommonMethods {
 		administrator.setContact(contact);
 		
 		return administrator;
+	}
+
+	public Predmet popuniPredmet(String nazivPredmeta, String sifraPredmeta) {
+		
+		Predmet predmet = new Predmet();
+		predmet.setNazivPredmeta(nazivPredmeta);
+		predmet.setSifraPredmeta(sifraPredmeta);
+		
+		return predmet;
 	}
 
 }
