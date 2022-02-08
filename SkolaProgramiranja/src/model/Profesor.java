@@ -4,13 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Profesor extends UserDetails {
 
 	private String identificationNo;
-	@OneToMany
+	@ManyToMany
 	private List<Predmet> predmentiKojePredaje = new ArrayList<Predmet>();
 	
 	public String getIdentificationNo() {
