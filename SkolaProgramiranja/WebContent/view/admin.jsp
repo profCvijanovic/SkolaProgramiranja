@@ -27,7 +27,7 @@
 	<a href="dodajPredmet.jsp"><button>DODAJ PREDMET</button></a>
 	<a href="dodajSmer.jsp"><button>DODAJ SMER</button></a> <br><br>
 	<a href="../PrikaziProfesoreController"><button>PRIKAZI PROFESORE</button></a>
-
+	<a href="../SmerPredmetController"><button>PRIKAZI SMEROVE</button></a>
 
 
 </body>
