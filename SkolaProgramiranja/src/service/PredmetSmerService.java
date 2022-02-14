@@ -41,4 +41,9 @@ public class PredmetSmerService {
 		
 	}
 
+	public void obrisiPredmetSmer(String idSmer, String idPredmet) {
+		dao.obrisiPredmetSmer(idSmer, idPredmet);
+		
+	}
+
 }

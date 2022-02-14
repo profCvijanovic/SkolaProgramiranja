@@ -120,6 +120,31 @@ public class PredmetSmerDao {
 		}
 		
 	}
+
+	public void obrisiPredmetSmer(String idSmer, String idPredmet) {
+		Session session = sf.openSession();
+		session.beginTransaction();
+		try {
+			
+			Predmet predmet = session.get(Predmet.class, Integer.parseInt(idPredmet));
+			Smer smer = session.get(Smer.class, Integer.parseInt(idSmer));
+			
+			Hibernate.initialize(predmet.getSmeroviNaKojimaJePredmet());
+			
+			if (predmet.getSmeroviNaKojimaJePredmet().contains(smer)) {
+				predmet.getSmeroviNaKojimaJePredmet().remove(smer);
+				session.saveOrUpdate(predmet);
+			}
+			session.getTransaction().commit();
+			System.out.println("Uspesno obrisan predmet sa smera");
+		} catch (Exception e) {		
+			session.getTransaction().rollback();
+			System.out.println("Nesto je puklo u obrisiPredmetSmer()! " + e);	
+		}finally {
+			session.close();
+		}
+		
+	}
 	
 	
 	

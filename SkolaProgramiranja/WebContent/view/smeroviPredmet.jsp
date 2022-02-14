@@ -25,7 +25,7 @@
 Lista smerova: ${sviSmerovi.size()} <br>
 Lista predmeta: ${sviPredmeti.size()}<br><br>
 
-<table border="1px">
+<table border="1">
 	<tr>
 		<th>SMER</th>
 		<th>NAZIV PREDMETA</th>
@@ -35,7 +35,15 @@ Lista predmeta: ${sviPredmeti.size()}<br><br>
 			<td>${s.nazivSmera}</td>
 			<td>
 				<c:forEach var= "p" items="${s.predmetiNaSmeru}">
-					${p.nazivPredmeta}<br>
+					${p.nazivPredmeta}
+					
+					<c:url var = "obrisi" value="ObrisiPredmetSmerController">
+						<c:param name="idPredmet" value="${p.idPredmet}"/>
+						<c:param name="idSmer" value="${s.idSmer}"/>
+					</c:url>
+					
+					<a href="${obrisi}"><button>ukloni</button></a>
+					<br>
 				</c:forEach> 
 				
 			</td>
@@ -43,7 +51,7 @@ Lista predmeta: ${sviPredmeti.size()}<br><br>
 	</c:forEach>
 </table><br><br>
 
-
+<label>Povezivanje smera i predmeta</label>
 <form action = "PoveziSmerPredmetController" method="get">
 
 Predmet:
