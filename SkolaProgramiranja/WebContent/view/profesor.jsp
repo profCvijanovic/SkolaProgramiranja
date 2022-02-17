@@ -27,9 +27,9 @@
 		<input type="submit" value="VIEW PROFILE">
 	</form>
 	
-	<form action = "../ProfesorController" method="post">
+	<form action = "../ProfesorController" method="get">
 		<input type="hidden" value="${user.idUser}" name = "idUser">
-		<input type="submit" value="VIEW PROFILE">
+		<input type="submit" value="MOJI PREDMETI">
 	</form>
 	
 	
